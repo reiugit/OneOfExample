@@ -1,5 +1,6 @@
 ﻿using OneOfExample;
 using OneOfExample.Extensions;
+using OneOfExample.Keyhandler;
 
 var oneOfErrorResult = Divider
     .Create(5, 0)
@@ -34,5 +35,4 @@ oneOfErrorResult
     .Print("OneOf.IsTx and OneOf.AsTx");
 
 
-Console.WriteLine("\n\nPress any key to exit...");
-Console.ReadKey();
+KeyHandler.WaitForKey();
