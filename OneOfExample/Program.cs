@@ -11,27 +11,27 @@ oneOfErrorResult
     .Match(
         value => value.ToString(),
         error => error.Value)
-    .Print("Using 'OneOf.Match'");
+    .Print("OneOf.Match");
 
 // 2. Example for:  OneOf.Switch
 oneOfErrorResult
     .Switch(
-        value => value.Print("Using 'OneOf.Switch'"),
-        error => error.Value.Print("Using 'OneOf.Switch'"));
+        value => value.Print("OneOf.Switch"),
+        error => error.Value.Print("OneOf.Switch"));
 
 // 3. Example for:  OneOf.TryPickTx
 (oneOfErrorResult
     .TryPickT0(out var value, out var error)
         ? value.ToString()
         : error.Value)
-    .Print("Using 'OneOf.TryPickTx'");
+    .Print("OneOf.TryPickTx");
 
 // 4. Example for:  OneOf.IsTx and AsTx
 (oneOfErrorResult
     .IsT0
         ? oneOfErrorResult.AsT0.ToString()
         : oneOfErrorResult.AsT1.Value)
-    .Print("Using 'OneOf.IsTx and OneOf.AsTx'");
+    .Print("OneOf.IsTx and OneOf.AsTx");
 
 
 Console.WriteLine("\n\nPress any key to exit...");
